@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .polaroid {
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 25%;
+      }
+
+      .polaroid img {
+        width: 100%;
+        height: auto;
+        border: 1px solid #ccc;
+      }
+
+      .caption {
+        margin-top: 10px;
+      }
+
+      .responsive-video {
+        width: 20%; /* Atur lebar sesuai kebutuhan */
+        max-width: 640px; /* Atur lebar maksimum jika diperlukan */
+        height: auto; /* Tetap sesuaikan tinggi agar rasio aspek tetap terjaga */
+      }
+    </style>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&family=Roboto:ital,wght@0,100;0,400;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Biraluvfly</title>
+  </head>
+  <body class="bg-basepink font-poppins px-16 py-16 mx-auto">
+    <h1 class="text-6xl font-bold text-center mb-16">
+      <span class="border-b-8 border-bgblue pb-4">Biraluvfly ❤️</span>
+    </h1>
+    <div id="intro" class="text-2xl">
+      <h1>
+        <span class="font-semibold">Hi 👋,</span> mau kenalan sama cewek yang
+        aku ga nyangka bakal bisa datang dalam hidup aku?
+      </h1>
+      <div id="ans-btn" class="mt-6 p-4" x-data="{ isModalOpen: false }">
+        <button
+          id="mau"
+          @click="isModalOpen = true"
+          class="px-3 py-3 rounded-lg shadow-md shadow-slate-950 bg-bgblue mr-4 hover:opacity-75 transition duration-500"
+        >
+          Maauuu.
+        </button>
+
+        <!-- Modal -->
+        <div
+          x-show="isModalOpen"
+          class="fixed inset-0 flex items-center justify-center z-50"
+        >
+          <div
+            class="modal-container bg-white w-5/6 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto"
+          >
+            <!-- Konten modal -->
+            <div class="modal-content py-4 text-left px-6">
+              <!-- Tombol untuk menutup modal -->
+              <div class="flex justify-end">
+                <button
+                  @click="isModalOpen = false"
+                  class="text-gray-500 hover:text-gray-700"
+                >
+                  <svg
+                    class="fill-current h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M6.293 6.293a1 1 0 011.414 0L10 8.586l2.293-2.293a1 1 0 111.414 1.414L11.414 10l2.293 2.293a1 1 0 01-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 01-1.414-1.414L8.586 10 6.293 7.707a1 1 0 010-1.414z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <!-- Gambar dalam modal -->
+              <img src="img/7.jpeg" alt="Gambar Contoh" class="mb-4" />
+              <!-- Deskripsi gambar -->
+              <p class="text-center">Wila Putri Albira Siregar Namanya</p>
+            </div>
+          </div>
+          <!-- Lapisan latar belakang untuk modal -->
+          <div
+            class="modal-overlay absolute inset-0 bg-gray-500 opacity-75"
+          ></div>
+        </div>
+
+        <!-- Tombol "Gamauuu" -->
+        <div x-data="{ isVisible: false }" class="inline">
+          <button
+            id="gamau"
+            @click="isVisible = !isVisible"
+            class="px-3 py-3 rounded-lg shadow-md shadow-slate-950 bg-red-500 hover:opacity-80 transition duration-500"
+          >
+            Gamauuu.
+          </button>
+
+          <span x-show="isVisible" x-transition.duration.300ms class="ml-4"
+            >Ih kok gamau, kebangetan sih 😤</span
+          >
+        </div>
+      </div>
+    </div>
+    <div id="beginning" class="text-2xl mt-10">
+      <h1>Tau kenapa aku bisa yakin banget sama dia?</h1>
+      <div id="causes" class="mt-4 p-6" x-data="{ isOpen: false }">
+        <button
+          @click="isOpen = !isOpen"
+          class="px-3 py-3 rounded-lg shadow-md shadow-slate-950 bg-bgblue mr-4 hover:opacity-75 transition duration-500"
+        >
+          Karena
+        </button>
+        <div x-show="isOpen" class="mt-16">
+          <div class="flex flex-wrap gap-4 text-sm justify-center">
+            <div class="polaroid">
+              <img src="img/1.jpeg" alt="Polaroid 1" />
+              <div class="caption">
+                dia yang membuat aku agar tidak insecure lagi
+              </div>
+            </div>
+            <div class="polaroid">
+              <img src="img/2.jpeg" alt="Polaroid 2" />
+              <div class="caption">dia yang mau mendengarkan keluh kesahku</div>
+            </div>
+            <div class="polaroid">
+              <img src="img/3.jpeg" alt="Polaroid 2" />
+              <div class="caption">dia yang mau menerima kekuranganku</div>
+            </div>
+            <div class="polaroid">
+              <img src="img/4.jpeg" alt="Polaroid 2" />
+              <div class="caption">
+                dia yang membuat aku percaya bahwa kita berharga di mata orang
+                yang tepat
+              </div>
+            </div>
+            <div class="polaroid">
+              <img src="img/5.jpeg" alt="Polaroid 2" />
+              <div class="caption">
+                dia yang mengubah kebiasaanku agar menjadi lebih baik
+              </div>
+            </div>
+            <div class="polaroid">
+              <img src="img/6.jpeg" alt="Polaroid 2" />
+              <div class="caption">
+                dia yang membuat aku menjadi laki - laki yang sesungguhnya
+              </div>
+            </div>
+            <!-- Tambahkan lebih banyak gambar polaroid sesuai kebutuhan -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="videoiliked" class="text-2xl mt-10" x-data="{isOpen: false}">
+      <h1>Mau lihat apa yang paling aku suka sama dia?</h1>
+      <div id="video-btn" class="mt-6 pl-16"></div>
+      <button
+        @click="isOpen = !isOpen"
+        id="mau"
+        class="ml-4 px-3 py-3 rounded-lg shadow-md shadow-slate-950 bg-bgblue mr-4 hover:opacity-75 transition duration-500"
+      >
+        Harus Mauuu.
+      </button>
+      <div x-show="isOpen" class="mt-10 ml-4">
+        <video class="responsive-video" controls>
+          <source src="img/video3.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+    <div id="outro" class="text-2xl mt-10">
+      <h1>Gitu doang sih, aku cuman mau kasih tahu kebahagaiaanku aja</h1>
+    </div>
+
+    <footer class="mt-24 -mb-10 bg-secblue max-w-full h-full">
+      <h1 class="text-center p-6">
+        Love, i hope we can always be together forever, copyright ©️<span
+          class="font-semibold"
+          >Biraluvfly</span
+        >
+        2023 | i love you so much more than anything 🥰.
+      </h1>
+    </footer>
+  </body>
+</html>
